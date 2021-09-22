@@ -1,38 +1,34 @@
-# Avaliação Front-End JR N1 #
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-Leia atentamente até o final.
+## Getting Started
 
-Nossa avaliação tem como foco analisar como o candidato no desevolvimento do front-end da página proposta.
-Avaliamos qualidade de código, versionamento, uso de automatizadores, uso de preprocessadores e javascript(vanilla, jquery ou react).
+First, run the development server:
 
-*OBS.: Evite bootstrap e outros similares, pois queremos avaliar o seu código na implementação dos itens.*
+```bash
+npm run dev
+# or
+yarn dev
+```
 
-Link do layout a ser desenvolvido: https://www.figma.com/file/Jgjk8tdDaQ4nHFHgQuNTLL/Avalia%C3%A7%C3%A3o-Front-end-JR.?node-id=0%3A1
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-### 01 - O Básico a ser executado para concorrer a vaga ###
-* Fork o repositório e inicie o desevolvimento;
-* Atenção para responsividade. 
-Note que no repositório existe uma pasta src com alguns assets(Caso necessário, pois já tem tudo no figma). A fonte usada no layout é "Roboto", uma fonte google.
+You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-Finalizando esses itens você terá terminado a etapa 01 da avaliação.
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
 
-*OBS.: Interações e funcionalidades não sugeridas no layout serão levadas em consideração. Atenção aos detalhes do layout.*
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-### 02 - Elementos de interação ###
-* O banner prinicipal é do tipo slider e possui uma navegação na direita, no crop de desktop, e abaixo do banner, no crop de mobile. Precisamos que ao navegar o nome e a páginação nessa área sejam atualizados. *OBS.: Você não precisa fazer o slider do zero. Utilize plugins como Slick, Owl carousel ou qualquer outro para fazer esse item do projeto*.
+## Learn More
 
-* Menu. Sempre que clicarmos/ou no hover no ícone de menu hamburguer precisamos exibir o menu.
+To learn more about Next.js, take a look at the following resources:
 
-* Quando usuário clicar no botão de comprar na prateleira precisamos que exiba o lightbox de produto adicionado e o botão de compra deve ficar sinalizado como item comprado.
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-* **PLUS:** Junto com a ação de exibição do lightbox atualize a quantidade de itens na sacola presente na direita header.
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-Finalizando esses itens você terá terminado a etapa 02 da avaliação.
+## Deploy on Vercel
 
-### EXTRA ###
-* Se você chegou até aqui você já é bem top! Essa etapa é um extra, e um diferencial para quem quiser se descatar. Note que no header existe elementos sem interação. Como contato e busca. Desenvolva uma solução para um desses elementos.
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-
-*OBS. 01: O candidato esta livre para trabalhar com a estrutura e tecnologia que preferir, exceto bootstrap e similares.*
-
-*OBS. 02: Finalizando a prova envie o link do fork para o e-mail: rafael.augusto@agencian1.com.br.*
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
