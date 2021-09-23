@@ -33,4 +33,7 @@ export const GlobalStyle = createGlobalStyle`
     color: inherit;
     text-decoration: none;
   }
+
+  .slick-slide {
+  }
 `;

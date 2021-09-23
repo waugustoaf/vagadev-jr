@@ -43,7 +43,7 @@ export const Container = styled.section`
       }
     }
 
-    p {
+    article {
       display: inline-block;
       max-width: 26rem;
 

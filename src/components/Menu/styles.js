@@ -5,6 +5,7 @@ export const Container = styled.div`
   top: 6rem;
   left: -1rem;
   padding: 1rem;
+  z-index: 2;
 
   color: ${props => props.theme.colors.shape};
 

@@ -11,7 +11,7 @@ export const Header = () => {
   const [isMenuVisible, setIsMenuVisible] = useState(false);
 
   const theme = useTheme();
-  const { cart } = useCart();
+  const { cart, clearCart } = useCart();
 
   const handleToggleMenuVisibility = () => {
     setIsMenuVisible(prevState => !prevState);
@@ -39,8 +39,10 @@ export const Header = () => {
           <span>Buscar</span>
         </LinkContainer>
         <LinkContainer last>
-          <Image src="/svg/shopping-bag-solid.svg" height={32} width={32} />
-          <div className="cart">{cart.length}</div>
+          <button type="button" onClick={clearCart}>
+            <Image src="/svg/shopping-bag-solid.svg" height={32} width={32} />
+          </button>
+          {cart.length !== 0 && <div className="cart">{cart.length}</div>}
         </LinkContainer>
       </nav>
 

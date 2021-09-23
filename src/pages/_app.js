@@ -1,8 +1,10 @@
-import { CustomThemeProvider } from '../styles/theme';
-import { GlobalStyle } from '../styles/global';
 import { createServer, Model } from 'miragejs';
+import 'slick-carousel/slick/slick-theme.css';
+import 'slick-carousel/slick/slick.css';
+import { HooksProvider } from '../hooks';
+import { GlobalStyle } from '../styles/global';
+import { CustomThemeProvider } from '../styles/theme';
 import { gamesCategories } from '../utils/games';
-import { HooksProvider } from '../hooks'
 
 createServer({
   models: {

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const Container = styled.footer`
   @media screen and (max-width: 768px) {
     background-color: ${props => props.theme.colors.shape};
   }
@@ -66,6 +66,11 @@ export const Content = styled.div`
         background-color: transparent;
         border: none;
         color: ${props => props.theme.colors.shape};
+        transition: filter 0.2s;
+
+        &:hover {
+          filter: brightness(0.8);
+        }
       }
     }
   }

@@ -23,7 +23,7 @@ export const Banner = () => {
           <strong>{currentPriceInteger}</strong>
           <small>,{currentPriceRest}</small>
         </span>
-        <p>{currentGame.description}</p>
+        <article>{currentGame.description}</article>
       </div>
 
       <BannerNavigator />

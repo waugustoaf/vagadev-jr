@@ -71,7 +71,6 @@ export const LinkContainer = styled.a`
 
   > div.cart {
     margin-right: 0 !important;
-    margin-left: -0.7rem;
     height: 1.4rem;
     width: 1.4rem;
     font-size: 0.875rem;
@@ -83,6 +82,11 @@ export const LinkContainer = styled.a`
     color: ${props => props.theme.colors.shape};
     background-color: ${props => props.theme.colors.secondary};
     border-radius: 50%;
+  }
+
+  > button {
+    background: transparent;
+    border: none;
   }
 
   &:hover {
