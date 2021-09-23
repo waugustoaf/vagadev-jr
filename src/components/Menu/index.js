@@ -1,20 +1,27 @@
 import { Container, GameButton } from './styles';
-import { gamesCategories } from '../../utils/games';
+import { useGame } from '../../hooks/games';
 import PropTypes from 'prop-types';
 
-export const Menu = ({ gameId, setCurrentGameId }) => {
+export const Menu = ({ onCloseMenu }) => {
+  const { games, currentGameId, setCurrentGameId } = useGame();
+
+  const handleChangeGame = gameId => {
+    setCurrentGameId(gameId);
+    onCloseMenu();
+  };
+
   return (
     <Container>
-      {gamesCategories.map(gameCategory => (
+      {games.map(gameCategory => (
         <div key={gameCategory.id.toString()}>
           <h4>{gameCategory.type}</h4>
           <div>
             {gameCategory.games.map(game => (
               <GameButton
                 type="button"
-                isActive={gameId === game.id}
+                isActive={currentGameId === game.id}
                 key={game.id.toString()}
-                onClick={() => setCurrentGameId(game.id)}
+                onClick={() => handleChangeGame(game.id)}
               >
                 {game.name}
               </GameButton>
@@ -27,6 +34,5 @@ export const Menu = ({ gameId, setCurrentGameId }) => {
 };
 
 Menu.propTypes = {
-  gameId: PropTypes.number.isRequired,
-  setCurrentGameId: PropTypes.func.isRequired,
+  onCloseMenu: PropTypes.func.isRequired,
 };

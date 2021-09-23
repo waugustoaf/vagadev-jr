@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 
 export const Container = styled.header`
+  padding: 1rem;
   padding-top: 2.75rem;
   width: 95%;
   max-width: 1189px;
@@ -58,12 +59,30 @@ export const LinkContainer = styled.a`
   cursor: pointer;
   transition: filter 0.2s;
 
+  position: relative;
+
   img {
     height: 1.5rem;
   }
 
   > div {
     margin-right: 1rem !important;
+  }
+
+  > div.cart {
+    margin-right: 0 !important;
+    margin-left: -0.7rem;
+    height: 1.4rem;
+    width: 1.4rem;
+    font-size: 0.875rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: ${props => props.theme.colors.shape};
+    background-color: ${props => props.theme.colors.secondary};
+    border-radius: 50%;
   }
 
   &:hover {
