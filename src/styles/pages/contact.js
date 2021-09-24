@@ -14,6 +14,7 @@ export const Container = styled.div`
   width: 100vw;
   height: 100vh;
   display: flex;
+  overflow: hidden;
 `;
 
 export const HeaderContainer = styled.div`
@@ -58,6 +59,7 @@ export const Content = styled.div`
   padding: 2rem;
   flex-direction: column;
   justify-content: center;
+  overflow-y: auto;
 
   h3 {
     font-weight: 400;
@@ -70,39 +72,6 @@ export const Content = styled.div`
     display: flex;
     flex-direction: column;
 
-    input {
-      border: 2px solid ${props => props.theme.colors.secondary};
-      height: 46px;
-      border-radius: 10px;
-      padding: 0 1rem;
-      color: ${props => props.theme.colors.primary};
-      outline: none;
-
-      & + label {
-        margin-top: 2rem;
-      }
-
-      &:focus {
-        border: 2px solid ${props => props.theme.colors.primary};
-      }
-    }
-
-    textarea {
-      border: 2px solid ${props => props.theme.colors.secondary};
-      border-radius: 10px;
-      padding: 0.5rem 1rem;
-      color: ${props => props.theme.colors.primary};
-      outline: none;
-
-      &:focus {
-        border: 2px solid ${props => props.theme.colors.primary};
-      }
-    }
-
-    label {
-      margin-bottom: 4px;
-    }
-
     button {
       margin-top: 3rem;
       width: 30%;
@@ -111,6 +80,11 @@ export const Content = styled.div`
       color: ${props => props.theme.colors.fontPrimary};
       padding: 1rem 2rem;
       border-radius: 10px;
+      transition: filter 0.2s;
+
+      &:hover {
+        filter: brightness(0.9);
+      }
     }
   }
 `;

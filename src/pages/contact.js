@@ -1,13 +1,48 @@
 import Link from 'next/link';
 import { FaArrowLeft } from 'react-icons/fa';
+import { FiMail, FiMessageSquare, FiUser } from 'react-icons/fi';
+import { AiOutlineFileText } from 'react-icons/ai';
+import { Input } from '../components/Form/Input';
+import { TextArea } from '../components/Form/TextArea';
 import {
   Container,
   Content,
   HeaderContainer,
   Image,
 } from '../styles/pages/contact';
+import { useForm } from 'react-hook-form';
+import * as Yup from 'yup';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { useRouter } from 'next/dist/client/router';
+
+const formSchema = Yup.object().shape({
+  name: Yup.string().required('O nome deve ser informado.'),
+  email: Yup.string()
+    .email('Informe um e-mail válido')
+    .required('O e-mail deve ser informado.'),
+  subject: Yup.string().required('O assunto deve ser informado'),
+  message: Yup.string()
+    .required('A mensagem deve ser informada')
+    .min(20, 'Deve conter no mínimo 20 caracteres'),
+});
 
 const Contact = () => {
+  const router = useRouter();
+
+  const {
+    register,
+    getValues,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(formSchema),
+  });
+
+  const handleSend = data => {
+    console.log(data);
+    router.push('/');
+  };
+
   return (
     <Container>
       <HeaderContainer>
@@ -23,32 +58,45 @@ const Contact = () => {
         <h3>Precisa de ajuda?</h3>
         <h2>Converse conosco agora mesmo!</h2>
 
-        <form>
-          <label htmlFor="name">Nome</label>
-          <input type="text" name="name" placeholder="Digite aqui seu nome" />
-
-          <label htmlFor="email">E-mail</label>
-          <input
-            type="text"
+        <form onSubmit={handleSubmit(handleSend)}>
+          <Input
+            name="name"
+            error={errors.name || {}}
+            icon={FiUser}
+            placeholder="Nome"
+            getValues={getValues}
+            register={register}
+          />
+          <Input
             name="email"
-            placeholder="Digite aqui seu E-mail"
+            error={errors.email || {}}
+            icon={FiMail}
+            placeholder="E-mail"
+            getValues={getValues}
+            register={register}
           />
-
-          <label htmlFor="subject">Assunto</label>
-          <input
-            type="text"
+          <Input
             name="subject"
-            placeholder="Digite aqui o assunto"
+            error={errors.subject || {}}
+            icon={AiOutlineFileText}
+            placeholder="Assunto"
+            getValues={getValues}
+            register={register}
           />
 
-          <label htmlFor="message">Mensagem</label>
-          <textarea
+          <TextArea
             name="message"
+            error={errors.message || {}}
             placeholder="Digite aqui como podemos te ajudar"
+            icon={FiMessageSquare}
+            getValues={getValues}
+            register={register}
             rows="3"
           />
 
-          <button>Confirmar</button>
+          <button type="submit" title="Enviar">
+            Confirmar
+          </button>
         </form>
       </Content>
     </Container>

@@ -10,6 +10,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "@hookform/resolvers": "^2.8.1",
     "axios": "^0.21.4",
     "miragejs": "^0.1.41",
     "next": "^11.1.2",
@@ -18,11 +19,13 @@
     "prop-types": "^15.7.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-hook-form": "^7.15.4",
     "react-icons": "^4.2.0",
     "react-modal": "^3.14.3",
     "react-slick": "^0.28.1",
     "slick-carousel": "^1.8.1",
-    "styled-components": "^5.3.1"
+    "styled-components": "^5.3.1",
+    "yup": "^0.32.9"
   },
   "devDependencies": {
     "@testing-library/dom": "^8.6.0",
