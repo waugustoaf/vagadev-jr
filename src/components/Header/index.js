@@ -6,6 +6,7 @@ import { useTheme } from 'styled-components';
 import { useCart } from '../../hooks/cart';
 import { Menu } from '../Menu';
 import { Container, LinkContainer } from './styles';
+import Link from 'next/link';
 
 export const Header = () => {
   const [isMenuVisible, setIsMenuVisible] = useState(false);
@@ -30,10 +31,12 @@ export const Header = () => {
         <Image src="/img/logo.png" width={200} height={50} />
       </div>
       <nav>
-        <LinkContainer>
-          <Image src="/svg/paper-plane.svg" height={32} width={32} />
-          <span>Contato</span>
-        </LinkContainer>
+        <Link href="/contact">
+          <LinkContainer>
+            <Image src="/svg/paper-plane.svg" height={32} width={32} />
+            <span>Contato</span>
+          </LinkContainer>
+        </Link>
         <LinkContainer>
           <Image src="/svg/search-solid.svg" height={32} width={32} />
           <span>Buscar</span>

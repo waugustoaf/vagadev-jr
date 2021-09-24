@@ -15,6 +15,8 @@ export const Input = ({
   const [isFocused, setIsFocused] = useState();
   const [isFilled, setIsFilled] = useState();
 
+  const registration = register(name);
+
   const handleFocus = () => {
     setIsFocused(prevState => !prevState);
     setIsFilled(!!getValues(name));
@@ -23,7 +25,7 @@ export const Input = ({
   const handleBlur = event => {
     setIsFocused(prevState => !prevState);
     setIsFilled(!!getValues(name));
-    rest.onBlur(event);
+    registration.onBlur(event);
   };
 
   return (
@@ -39,9 +41,9 @@ export const Input = ({
       <input
         type="text"
         name={name}
+        {...registration}
         onFocus={handleFocus}
         onBlur={handleBlur}
-        {...register(name)}
         {...rest}
       />
 

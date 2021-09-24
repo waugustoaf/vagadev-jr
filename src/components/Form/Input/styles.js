@@ -10,10 +10,10 @@ export const Container = styled.div`
 
   border: ${props =>
     props.isFocused
-      ? `2px solid ${props.theme.colors.secondary}`
+      ? `2px solid ${props.theme.colors.primary}`
       : props.isErrored
       ? `2px solid #ff0000`
-      : `2px solid ${props.theme.colors.primary}`};
+      : `2px solid ${props.theme.colors.secondary}`};
 
   & + div {
     margin-top: 1rem;
