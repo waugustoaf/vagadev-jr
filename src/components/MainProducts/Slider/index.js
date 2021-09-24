@@ -29,7 +29,7 @@ export const Slider = () => {
     <Container>
       <SliderSlick {...settings}>
         {featuredGames.map(game => (
-          <SlideCard game={game} />
+          <SlideCard key={game.id.toString()} game={game} />
         ))}
       </SliderSlick>
     </Container>

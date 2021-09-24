@@ -16,7 +16,7 @@ const GameProvider = ({ children }) => {
 
   useEffect(() => {
     (async () => {
-      const response = (await api.get('/rest/games')).data.games;
+      const response = (await api.get('/rest/games')).data;
 
       setGames(response);
     })();
